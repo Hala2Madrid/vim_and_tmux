@@ -13,7 +13,7 @@ config of vim and tmux on  Ubuntu16.04.3 as a python IDE
 
 ### after ubuntu17
 no vim-nox-py2 support
-exact the vim8.zip and use it
+extract the vim8.zip and use it
 
 ## tmux
 - none

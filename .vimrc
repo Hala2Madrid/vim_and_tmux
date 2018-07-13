@@ -25,6 +25,7 @@ Plugin 'iamcco/markdown-preview.vim'
 "vim-template
 Plugin 'aperezdc/vim-template'
 
+
 "html
 "  isnowfy only compatible with python not python3
 Plugin 'isnowfy/python-vim-instant-markdown'
@@ -58,6 +59,10 @@ Plugin 'Lokaltog/powerline',{'rtp': 'powerline/bindings/vim/'}
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
 
+"cell-mode
+Plugin 'julienr/vim-cellmode'
+
+
 "isort 
 Plugin 'fisadev/vim-isort'
 
@@ -89,12 +94,24 @@ let g:pydiction_location='~/.vim/bundle/Pydiction/complete-dict'
 let mapleader=" "
 map <leader>g:YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+set hls
+hi Search ctermbg=lightyellow ctermfg=red
+nnoremap <silent> <leader>h :set hlsearch! hlsearch?<CR> 
+
+set incsearch
+
 " jedi shortcuts
 let g:jedi#goto_command = "<leader>d"
 let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#show_call_signatures = "1"
 let g:jedi#completions_enabled = 0
+
+" vim-cellmode
+let g:cellmode_use_tmux=1
+let g:cellmode_tmux_windowname='vim'
+let g:cellmode_tmux_panenumber='2'
+noremap <silent> <C-e> :call RunTmuxPythonAllCellsAbove()<CR>
 
 "indent line
 let g:indentLine_char = "┆"
@@ -137,6 +154,7 @@ map <C-Y> :call yapf#YAPF()<cr>
 imap <C-Y> <c-o>:call yapf#YAPF()<cr>
 "turn on numbering
 set nu
+
 
 "python with virtualenv support
 py << EOF
